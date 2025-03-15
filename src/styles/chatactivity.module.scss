@@ -1,0 +1,16 @@
+.chatActivityWrapper{
+    background-color: white;
+    flex: 1;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5em;
+    text-transform: capitalize;
+}
+
+.chatActivityRadio{
+    display: flex;
+ 
+}
