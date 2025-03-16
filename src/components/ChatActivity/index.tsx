@@ -92,7 +92,7 @@ const ChatActivity = ({ questionState = [], step = 0, updateState, updateStep }:
             break;
         case "textbox":
             elements = <>
-                <input type="textbox" id={`textbox-${step}}`} name={`textbox-${step}}`} value={currentQuestion.value} onChange={(e) => onChangeHandler(e, step)} onKeyDown={(e) => onChangeHandler(e, step)} />
+                <input type="textbox" className={styles.textbox} id={`textbox-${step}}`} name={`textbox-${step}}`} value={currentQuestion.value} onChange={(e) => onChangeHandler(e, step)} onKeyDown={(e) => onChangeHandler(e, step)} />
             </>
             break;
         case "checkbox":
@@ -100,7 +100,7 @@ const ChatActivity = ({ questionState = [], step = 0, updateState, updateStep }:
                 <Fragment key={`checkbox-${step}-${item.id}`}>
                     <div className={styles.chatActivityRadio}>
                         <input type="checkbox" id={`checkbox-${step}-${item.id}`} name={`checkbox-${step}`} data-itemid={item.id} onChange={(e) => onChangeHandler(e, step)} />
-                        <label htmlFor={item.message} className="chatBubblesOption"> &nbsp; {item.message}</label>
+                        <label htmlFor={item.message} className={styles.chatBubblesOption}> {item.message}</label>
                     </div>
 
                 </Fragment>

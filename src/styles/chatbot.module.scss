@@ -1,28 +1,28 @@
 .chatBotPage{
     background-color: rgb(218, 218, 218);
     width: 1vw;
-    height: 100vh;
+    height: 80vh;
     overflow: hidden;
     padding: 1vh 1vw;
     max-width: 720px;
     width: 100%;
     margin: 0 auto;
-
+   
     .chatMessageWrapper {
         height: 48vh;
         max-height: 68vh;
         border: 2px solid #7f387d;
         row-gap: 16px;
-        overflow-y: scroll;
         padding: 12px 12px;
+        overflow-y: scroll;
         position: relative;
 
         .chatMessageInnerWrapper{
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            height: 500px;
-            overflow-y: scroll;
+           // height: 300px;
+           // overflow-y: scroll;
             row-gap: 16px;
             // font-size: 2em;
         }
@@ -30,7 +30,7 @@
     
     .chatActionWrapper {
         height: 28vh;
-        border: 2px solid #ff909d;
+        border: 2px solid #414040;
         display: flex;
         flex-direction: column;
         background-color: white;

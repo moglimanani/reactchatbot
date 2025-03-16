@@ -10,7 +10,17 @@
     text-transform: capitalize;
 
     .updatePush {
-        background-color: gray;
+        background-color: #7f387d;
+        color: #ffffff;
+        padding: 5px;
+    }
+    .chatBubblesOption {
+        padding-left: 5px;
+    }
+    .textbox {
+        background: #ccc;
+        padding: 5px;
+        width: 400px;
     }
 }
 
