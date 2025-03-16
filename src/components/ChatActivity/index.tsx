@@ -1,6 +1,5 @@
-import { Fragment } from "react/jsx-runtime";
 import styles from '../../styles/chatactivity.module.scss'
-import React from "react";
+import React, {Fragment, memo} from "react";
 
 interface Options {
     id?: number;
@@ -32,13 +31,13 @@ const ChatActivity = ({ questionState = [], step = 0, updateState, updateStep }:
             if (typeof step === 'number') {
                 revisedQuestion[step].value = e.target.dataset["itemid"]
             }
+            
             updateState(revisedQuestion)
             const curStep = step || 0
             updateStep(curStep + 1)
         } else if (currentQuestion.type === 'textbox') {
 
             if (typeof step === 'number') {
-                console.log('e.target.value', e.target.value, revisedQuestion[step].value);
                 revisedQuestion[step].value = e.target.value
                 updateState(revisedQuestion)
             }
@@ -63,8 +62,6 @@ const ChatActivity = ({ questionState = [], step = 0, updateState, updateStep }:
                 if (typeof step === 'number') {
                     const idArr = revisedQuestion[step].value.split('-')
                     const updated = idArr.filter(item => item !== id)
-                    console.log('updated', updated);
-
                     revisedQuestion[step].value = updated.join('-')
                 }
             }
@@ -87,7 +84,7 @@ const ChatActivity = ({ questionState = [], step = 0, updateState, updateStep }:
             elements = currentQuestion.options.map(item => (
                 <Fragment key={`radio-${step}-${item.id}`}>
                     <div className={styles.chatActivityRadio}>
-                        <input type="radio" id={`radio-${step}-${item.id}`} name={`question-${step}`} data-itemId={item.id} onChange={(e) => onChangeHandler(e, step)} />
+                        <input type="radio" id={`radio-${step}-${item.id}`} name={`question-${step}`} data-itemid={item.id} onChange={(e) => onChangeHandler(e, step)} />
                         <label htmlFor={item.message}>{item.message}</label>
                     </div>
                 </Fragment>
@@ -102,14 +99,13 @@ const ChatActivity = ({ questionState = [], step = 0, updateState, updateStep }:
             elements = currentQuestion.options.map(item => (
                 <Fragment key={`checkbox-${step}-${item.id}`}>
                     <div className={styles.chatActivityRadio}>
-                        <input type="checkbox" id={`checkbox-${step}-${item.id}`} name={`checkbox-${step}`} data-itemId={item.id} onChange={(e) => onChangeHandler(e, step)} />
+                        <input type="checkbox" id={`checkbox-${step}-${item.id}`} name={`checkbox-${step}`} data-itemid={item.id} onChange={(e) => onChangeHandler(e, step)} />
                         <label htmlFor={item.message} className="chatBubblesOption"> &nbsp; {item.message}</label>
                     </div>
 
-
                 </Fragment>
             ))
-            elements.push(<button onClick={(e) => onMoveHandler(step)} className="updatePush">update</button>)
+            elements.push(<button  key={`checkbox-${step}-button`} onClick={(e) => onMoveHandler(step)} className={styles.updatePush}>update</button>)
             break;
         default: {
             <div></div>
@@ -125,4 +121,4 @@ const ChatActivity = ({ questionState = [], step = 0, updateState, updateStep }:
     )
 }
 
-export default ChatActivity
+export default memo(ChatActivity)
