@@ -74,7 +74,7 @@ export const ChatBotPage = () => {
         return (
             <Fragment>
                 <div className={styles.chatMessageInnerWrapper}>
-                <label>Hi Sethu, Let's start the chat!</label>
+                <label>Hi Richard, Let's start the chat!</label>
                 <Bubbles />
                 {step <= state.length - 1 && <ChatBubble question={state![step]?.question} />}
                 </div>

@@ -4,11 +4,13 @@ import { ChatBotPage } from './pages/chatbot'
 import './styles/App.scss'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-     <ChatBotPage />
+      <div className='chatBox'>
+          <h2>Chat</h2>
+          <ChatBotPage />
+      </div>
     </>
   )
 }

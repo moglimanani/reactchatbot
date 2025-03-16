@@ -103,13 +103,13 @@ const ChatActivity = ({ questionState = [], step = 0, updateState, updateStep }:
                 <Fragment key={`checkbox-${step}-${item.id}`}>
                     <div className={styles.chatActivityRadio}>
                         <input type="checkbox" id={`checkbox-${step}-${item.id}`} name={`checkbox-${step}`} data-itemId={item.id} onChange={(e) => onChangeHandler(e, step)} />
-                        <label htmlFor={item.message}>{item.message}</label>
+                        <label htmlFor={item.message} className="chatBubblesOption"> &nbsp; {item.message}</label>
                     </div>
 
 
                 </Fragment>
             ))
-            elements.push(<button onClick={(e) => onMoveHandler(step)}>update</button>)
+            elements.push(<button onClick={(e) => onMoveHandler(step)} className="updatePush">update</button>)
             break;
         default: {
             <div></div>

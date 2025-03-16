@@ -9,12 +9,11 @@
     margin: 0 auto;
 
     .chatMessageWrapper {
-        height: 68vh;
+        height: 48vh;
         max-height: 68vh;
-        border: 2px solid green;
+        border: 2px solid #7f387d;
         row-gap: 16px;
-        overflow: scroll;
-        justify-content: flex-end;
+        overflow-y: scroll;
         padding: 12px 12px;
 
         .chatMessageInnerWrapper{
@@ -28,7 +27,7 @@
     
     .chatActionWrapper {
         height: 28vh;
-        border: 2px solid blue;
+        border: 2px solid #ff909d;
         display: flex;
         flex-direction: column;
         background-color: white;

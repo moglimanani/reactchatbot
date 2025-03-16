@@ -1,13 +1,16 @@
 .chatBubbleWrapper{
-    background-color: rgb(243, 241, 241);
+    background-color: #7f387d;
     // max-width: 160px;
-    width: 50%;
+    width: 40%;
     border-radius: 8px;
-    padding: 14px;
-    color: black; 
-    font-size: 1.5em;   
+    padding: 10px 14px;
+    color: #fff; 
+    font-size: 1.1em;   
+    text-align: left;
 }
 
 .chatBubbleWrapperRight{
    margin-left: auto;
+   background: #ffffff;
+   color: #252424;
 }
